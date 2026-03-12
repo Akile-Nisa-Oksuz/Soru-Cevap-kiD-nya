@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Sanal mı Gerçek mi?</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- SECTION COMPLETE OVERLAY -->
+<div class="sc-overlay" id="sc-overlay">
+  <div class="sc-popup" id="sc-popup"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<!-- ══════════════════════════════
+     S1 — SPLASH
+══════════════════════════════ -->
+<div id="s-splash" class="screen active">
+  <div class="splash-wrap">
+    <div class="splash-card">
+      <div class="title-box">
+        <h1>Sanal mı<br>Gerçek mi?</h1>
+        <div class="sub">Sosyal Kimlik Araştırması · 2025</div>
+      </div>
+      <label class="name-label" for="ni">Seni nasıl çağırayım?</label>
+      <input class="name-input" id="ni" type="text" placeholder="Adın veya takma adın..." maxlength="30" autocomplete="off">
+      <div class="privacy-note">🔒 Kimliğin gizli tutulur, araştırma amaçlıdır</div>
+      <button class="btn-main btn-start"    onclick="startSurvey()">🎮 Ankete Başla</button>
+      <button class="btn-main btn-account"  onclick="showToast('Hesap özelliği yakında!')">👤 Hesabım</button>
+      <button class="btn-main btn-settings" onclick="showToast('Ayarlar yakında!')">⚙️ Ayarlar</button>
+    </div>
+    <div class="section-pills">
+      <span class="s-pill sp-rose">🔒 Sosyal Kaygı</span>
+      <span class="s-pill sp-lav">🔗 Sosyal Bağlılık</span>
+      <span class="s-pill sp-sage">🪞 Benlik Sunumu</span>
+    </div>
+    <div class="splash-fn">48 soru · ~10 dk · Yanıtlar araştırma amaçlı gizlidir</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S2 — SURVEY QUESTIONS
+══════════════════════════════ -->
+<div id="s-question" class="screen">
+  <div class="top-bar">
+    <button class="tb-back" onclick="confirmBack()">←</button>
+    <div class="tb-info">
+      <div class="tb-prog-bar">
+        <div class="tb-prog-fill" id="prog-fill"></div>
+      </div>
+      <div class="tb-labels">
+        <span class="tb-sec-name" id="tb-sec"></span>
+        <span class="tb-counter" id="tb-cnt"></span>
+      </div>
+    </div>
+  </div>
+  <div class="q-body" id="q-body"></div>
+  <div class="q-nav">
+    <button class="btn-q-nav btn-q-back" id="btn-back" onclick="prevQ()">← Geri</button>
+    <div class="section-dots" id="s-dots"></div>
+    <button class="btn-q-nav btn-q-next" id="btn-next" onclick="nextQ()" disabled>İleri →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S3 — PERSONA QUESTIONNAIRE
+══════════════════════════════ -->
+<div id="s-persona-q" class="screen">
+  <div class="top-bar">
+    <button class="tb-back" onclick="showScreen('s-question')">←</button>
+    <div class="tb-info">
+      <div class="tb-prog-bar">
+        <div class="tb-prog-fill" id="pq-prog" style="background:linear-gradient(90deg,var(--lav-md),var(--lav))"></div>
+      </div>
+      <div class="tb-labels">
+        <span class="tb-sec-name">🪪 Kişi Kartı Soruları</span>
+        <span class="tb-counter" id="pq-cnt"></span>
+      </div>
+    </div>
+  </div>
+  <div class="pq-body" id="pq-body"></div>
+</div>
+
+<!-- ══════════════════════════════
+     S4 — LOADING
+══════════════════════════════ -->
+<div id="s-loading" class="screen">
+  <div class="loading-card">
+    <div class="load-spinner"></div>
+    <div class="load-title" id="load-title">Profil oluşturuluyor...</div>
+    <div class="load-steps" id="load-steps">
+      <div class="load-step wait"><span class="load-step-icon">📊</span>Sosyal kaygı profili hesaplanıyor</div>
+      <div class="load-step wait"><span class="load-step-icon">🔗</span>Sosyal bağlılık analizi yapılıyor</div>
+      <div class="load-step wait"><span class="load-step-icon">🪞</span>Benlik sunumu değerlendiriliyor</div>
+      <div class="load-step wait"><span class="load-step-icon">🔄</span>Gerçek & dijital kimlik karşılaştırılıyor</div>
+      <div class="load-step wait"><span class="load-step-icon">✨</span>Persona kartın oluşturuluyor</div>
+    </div>
+  </div>
+  <div class="load-sub" id="load-sub">Verilerini analiz ediyoruz...</div>
+</div>
+
+<!-- ══════════════════════════════
+     S5 — PERSONA CARD
+══════════════════════════════ -->
+<div id="s-persona" class="screen">
+  <div class="persona-nav">
+    <button class="tb-back" onclick="showScreen('s-splash')" style="flex-shrink:0">←</button>
+    <div class="persona-nav-title" id="pn-title">Persona Kartın</div>
+    <button class="btn-to-results" onclick="buildResults()">📊 Analiz →</button>
+  </div>
+  <div class="persona-tabs-wrap">
+    <button class="p-tab t-real active" id="tab-real" onclick="switchPTab('real')">🌿 Gerçek Sen</button>
+    <button class="p-tab t-dig"         id="tab-dig"  onclick="switchPTab('digital')">📡 Dijital Sen</button>
+  </div>
+  <div class="p-panels" id="p-panels"></div>
+</div>
+
+<!-- ══════════════════════════════
+     S6 — RESULTS
+══════════════════════════════ -->
+<div id="s-results" class="screen">
+  <div class="top-bar">
+    <button class="tb-back" onclick="showScreen('s-persona')">←</button>
+    <div class="tb-info">
+      <div style="text-align:center">
+        <span class="tb-sec-name">📊 Analiz Sonuçları</span>
+      </div>
+    </div>
+  </div>
+  <div class="results-hdr">
+    <div class="rh-trophy">🏆</div>
+    <div class="rh-title">Analiz Tamamlandı!</div>
+    <div class="rh-xp" id="rh-xp">⭐ 0 XP</div>
+  </div>
+  <div class="results-body" id="results-body"></div>
+</div>
+
+<!-- ══════════════════════════════
+     JS
+══════════════════════════════ -->
+<script src="js/script.js"></script>
+</body>
+</html>
