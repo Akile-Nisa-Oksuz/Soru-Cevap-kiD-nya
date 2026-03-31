@@ -724,10 +724,79 @@ function switchPTab(type) {
 }
 
 function buildResults() {
+  if (!window._SD) {
+    showToast('Persona kartı verisi eksik; hesaplama yeniden yapılıyor...');
+    buildPersonaCard();
+  }
+
   const d = window._SD;
+  if (!d) {
+    showToast('Analiz verisi bulunamadı. Lütfen tekrar başlatın.');
+    return;
+  }
+
+  document.getElementById('rh-xp').textContent = '⭐ ' + totalXP + ' XP';
+
+  function meter(label, value, color) {
+    return `
+      <div class="analysis-chip" style="border-color:${color};">
+        <div class="ach-lbl">${label}</div>
+        <div style="height:8px;background:#eee;border-radius:6px;overflow:hidden;margin-top:6px;">
+          <div style="width:${value}%;height:100%;background:${color};transition:width 0.8s;"></div>
+        </div>
+        <div style="margin-top:4px;font-size:.75rem;color:#555;">%${value}</div>
+      </div>
+    `;
+  }
+
+  const donutParameters = (label, value, maxValue, color) => {
+    const radius = 50;
+    const circumference = 2 * Math.PI * radius;
+    const filled = (value / maxValue) * circumference;
+    return `
+    <div class="chart-item">
+      <div class="donut-wrap">
+        <svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="${radius}" fill="none" stroke="#eee" stroke-width="12"></circle>
+          <circle cx="60" cy="60" r="${radius}" fill="none" stroke="${color}" stroke-width="12"
+            stroke-dasharray="${filled} ${circumference - filled}"
+            stroke-dashoffset="${circumference * 0.25}"
+            stroke-linecap="round"></circle>
+        </svg>
+        <div class="donut-center">
+          <div class="dc-icon">${label}</div>
+          <div class="dc-real">%${value}</div>
+        </div>
+      </div>
+      <div class="chart-lbl">${label}</div>
+    </div>`;
+  };
+
+  document.getElementById('results-body').innerHTML = `
+    <div class="results-card">
+      <h3>Detaylı Analiz</h3>
+      <p><strong>Gerçek Persona:</strong> ${d.realP.name} (%${d.realAvg})</p>
+      <p><strong>Dijital Persona:</strong> ${d.digP.name} (%${d.digAvg})</p>
+      <p><strong>Fark:</strong> %${Math.abs(d.realAvg - d.digAvg)}</p>
+      <p><strong>İçgörü:</strong> ${d.insightText || 'Veri mevcut, analiz detaylanıyor...'}</p>
+      <div class="analysis-title" style="margin-top:14px;">📊 Kapsamlı Ölçüm Grafikleri</div>
+      <div class="charts-card">
+        <div class="charts-ttl">İç İçe Gerçek vs Dijital Donut Grafiği</div>
+        <div class="charts-grid">
+          ${donutParameters('Kaygı G', d.sc.b1r, 100, '#E8547A')}
+          ${donutParameters('Kaygı D', d.sc.b1d, 100, '#C03060')}
+          ${donutParameters('Bağlılık G', d.sc.b2r, 100, '#8B68D4')}
+          ${donutParameters('Bağlılık D', d.sc.b2d, 100, '#6845B8')}
+          ${donutParameters('Benlik G', d.sc.b3r, 100, '#3DAB8C')}
+          ${donutParameters('Benlik D', d.sc.b3d, 100, '#2A8068')}
+        </div>
+      </div>
+    </div>
+  `;
+
   showScreen('s-results');
   const resultTitle = document.querySelector('.rh-title');
-  if(resultTitle) resultTitle.textContent = "Test Tamamlandı, " + userName + "!";
+  if (resultTitle) resultTitle.textContent = "Test Tamamlandı, " + userName + "!";
 }
 
 function restartAll() {
