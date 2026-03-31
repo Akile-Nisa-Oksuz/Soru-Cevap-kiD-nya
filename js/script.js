@@ -151,14 +151,14 @@ const PERSONA_QS = [
 /* ─── PERSONA TYPES ─── */
 const PERSONA_TYPES = {
   real:[
-    {range:[0,45],   name:'Sessiz Gözlemci',  emoji:'🌙', tagline:'Derinlemesine düşünen, sözcüklerini dikkatle seçen; gerçek bağlar kurduğunda son derece sadık ve güçlü.'},
-    {range:[46,65],  name:'Dengeli Yolcu',    emoji:'⚖️', tagline:'Sosyal durumları hem içgüdüsel hem düşünceli değerlendirirsin. Esnek, uyumlu ve güvenilir bir sosyal profil.'},
-    {range:[66,100], name:'Açık Kalp',        emoji:'🌻', tagline:'Gerçek hayatta tam anlamıyla kendiniz. Otantikliğin ve bağlılık gücün çevrendeki insanlara ilham veriyor.'},
+    {range:[0,45],   name:'Sessiz Gözlemci',  emoji:'🌙', tagline:'Derinlemesine düşünen, sözcüklerini dikkatle seçen.'},
+    {range:[46,65],  name:'Dengeli Yolcu',    emoji:'⚖️', tagline:'Esnek ve uyumlu bir sosyal profil.'},
+    {range:[66,100], name:'Açık Kalp',        emoji:'🌻', tagline:'Otantik ve bağlılık gücün ilham veriyor.'},
   ],
   digital:[
-    {range:[0,45],   name:'Dijital Gölge',    emoji:'👤', tagline:'Çevrimiçi ortamda tedirgin ve çekimsersin. Dijital dünya seni zorlasa da bu tamamen normaldir.'},
-    {range:[46,65],  name:'Seçici Paylaşımcı',emoji:'🎛️', tagline:'Sosyal medyada ne paylaşacağını özenle seçiyorsun. Dijital kimliğini bilinçli şekillendiriyorsun.'},
-    {range:[66,100], name:'Dijital Özgün',    emoji:'✨', tagline:'Çevrimiçi ortamda kendinle barışık, özgün ve bağlanabilen birisin. Dijital ve gerçek benliğin uyumlu.'},
+    {range:[0,45],   name:'Dijital Gölge',    emoji:'👤', tagline:'Çevrimiçi ortamda tedirgin.'},
+    {range:[46,65],  name:'Seçici Paylaşımcı',emoji:'🎛️', tagline:'Dijital kimliğini bilinçli şekillendiriyorsun.'},
+    {range:[66,100], name:'Dijital Özgün',    emoji:'✨', tagline:'Dijital ve gerçek benliğin uyumlu.'},
   ],
 };
 
