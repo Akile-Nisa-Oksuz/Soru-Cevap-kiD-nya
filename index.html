@@ -23,21 +23,50 @@
     <div class="splash-card">
       <div class="title-box">
         <h1>Sanal mı<br>Gerçek mi?</h1>
-        <div class="sub">Sosyal Kimlik Araştırması · 2025</div>
+        <div class="sub">Sosyal Kimlik</div>
       </div>
-      <label class="name-label" for="ni">Seni nasıl çağırayım?</label>
-      <input class="name-input" id="ni" type="text" placeholder="Adın veya takma adın..." maxlength="30" autocomplete="off">
-      <div class="privacy-note">🔒 Kimliğin gizli tutulur, araştırma amaçlıdır</div>
+      <label class="name-label">Seni nasıl çağırayım?</label>
+      <input class="name-input" id="ni-real" type="text" placeholder="Gerçek adın..." maxlength="30" autocomplete="off">
+      <input class="name-input" id="ni-nick" type="text" placeholder="Sosyal medya nick'in..." maxlength="30" autocomplete="off">
+      <div class="privacy-note">🔒 Kimliğin gizli tutulur.</div>
+      <div class="print-info">
+        <span class="info-icon" title="Sonda yazdırmak için tüm soruları cevaplayınız. Toplam XP'nin % ilerlemesine göre yazdırma hakkınız olacaktır.">ℹ️</span>
+        <span class="info-text">Sonda yazdırmak için tüm soruları cevaplayınız</span>
+      </div>
       <button class="btn-main btn-start"    onclick="startSurvey()">🎮 Ankete Başla</button>
       <button class="btn-main btn-account"  onclick="showToast('Hesap özelliği yakında!')">👤 Hesabım</button>
       <button class="btn-main btn-settings" onclick="showToast('Ayarlar yakında!')">⚙️ Ayarlar</button>
+    </div>
+    <div class="theme-selector">
+      <div class="theme-label">🎨 Tema:</div>
+      <button class="theme-btn active" onclick="setTheme('light')" title="Açık Tema">☀️</button>
+      <button class="theme-btn" onclick="setTheme('mint')" title="Mint Tema">🌿</button>
+      <button class="theme-btn" onclick="setTheme('dark')" title="Karanlık Tema">🌙</button>
     </div>
     <div class="section-pills">
       <span class="s-pill sp-rose">🔒 Sosyal Kaygı</span>
       <span class="s-pill sp-lav">🔗 Sosyal Bağlılık</span>
       <span class="s-pill sp-sage">🪞 Benlik Sunumu</span>
     </div>
-    <div class="splash-fn">25 soru · ~5 dk · Yanıtlar araştırma amaçlı gizlidir</div>
+    <div class="splash-fn">25 soru · ~5 dk · Yanıtlar gizlidir</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     MOBILE SCALE INFO
+══════════════════════════════ -->
+<div id="mobile-scale-overlay" class="sc-overlay" style="display:none">
+  <div class="sc-popup" style="max-width:340px;text-align:center">
+    <div style="font-size:3rem;margin-bottom:12px">📊</div>
+    <div style="font-family:'Caveat',cursive;font-size:1.4rem;font-weight:800;margin-bottom:12px">Değerlendirme Ölçeği</div>
+    <div style="font-size:.8rem;text-align:left;line-height:1.8;margin-bottom:16px;color:var(--ink-mid)">
+      <div style="margin-bottom:8px"><strong>--</strong> Kesinlikle Katılmıyorum</div>
+      <div style="margin-bottom:8px"><strong>-</strong> Katılmıyorum</div>
+      <div style="margin-bottom:8px"><strong>○</strong> Karasızım</div>
+      <div style="margin-bottom:8px"><strong>+</strong> Katılıyorum</div>
+      <div><strong>++</strong> Kesinlikle Katılıyorum</div>
+    </div>
+    <button class="btn-main" onclick="document.getElementById('mobile-scale-overlay').style.display='none';renderQ();showScreen('s-question')" style="font-size:1rem">Anladım ✨</button>
   </div>
 </div>
 
@@ -117,6 +146,9 @@
     <button class="p-tab t-dig"         id="tab-dig"  onclick="switchPTab('digital')">📡 Dijital Sen</button>
   </div>
   <div class="p-panels" id="p-panels"></div>
+  <div class="persona-print-cta">
+    <button class="btn-p-print" onclick="printPersona()">🖨️ Kartı Yazdır</button>
+  </div>
 </div>
 
 <!-- ══════════════════════════════

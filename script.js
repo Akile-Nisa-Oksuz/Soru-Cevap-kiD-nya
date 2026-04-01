@@ -4,6 +4,33 @@
    _real = Gerçek Hayat   _dig = Dijital Hayat
 ══════════════════════════════════════════════ */
 
+/* ══════════════════════════════════════════════
+   TEMA SİSTEMİ
+══════════════════════════════════════════════ */
+function initTheme() {
+  const saved = localStorage.getItem('appTheme') || 'light';
+  setTheme(saved);
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('appTheme', theme);
+  
+  // Buton görselleri güncelle
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  const btnMap = { light: 0, mint: 1, dark: 2 };
+  const idx = btnMap[theme];
+  if (document.querySelectorAll('.theme-btn')[idx]) {
+    document.querySelectorAll('.theme-btn')[idx].classList.add('active');
+  }
+}
+
+// Sayfa yüklendiğinde temayı uygula
+document.addEventListener('DOMContentLoaded', initTheme);
+
 const POOL = {
 
   b1_real: [
@@ -299,11 +326,19 @@ function confirmBack() {
    BAŞLAT
 ══════════════════════════════════════════════ */
 function startSurvey() {
-  userName = document.getElementById('ni').value.trim() || 'Katılımcı';
+  const realName = document.getElementById('ni-real').value.trim() || 'Katılımcı';
+  const nickName = document.getElementById('ni-nick').value.trim();
+  userName = nickName ? `${realName} (${nickName})` : realName;
   buildSession();
   curQ = 0;
-  renderQ();
-  showScreen('s-question');
+  
+  // Mobil cihazlarda ölçek açıklaması göster
+  if (window.innerWidth <= 480) {
+    document.getElementById('mobile-scale-overlay').style.display = 'flex';
+  } else {
+    renderQ();
+    showScreen('s-question');
+  }
 }
 
 /* ══════════════════════════════════════════════
@@ -347,17 +382,17 @@ function renderQ() {
         ${qd.rev ? '<span style="font-size:.62rem;background:#FFE0E8;color:#C03060;border:1px solid #FFBCCB;border-radius:4px;padding:1px 5px;margin-left:4px">Ters</span>' : ''}
       </div>
       <div class="q-text-main">"${qd.text}"</div>
-      <div class="likert-row">
+      <div class="likert-row${qd.rev ? ' likert-reverse' : ''}">
         ${[
-          {v:1,t:'Kesinlikle<br>Katılmıyorum'},
-          {v:2,t:'Katıl-<br>mıyorum'},
-          {v:3,t:'Kararsı-<br>zım'},
-          {v:4,t:'Katılı-<br>yorum'},
-          {v:5,t:'Kesinlikle<br>Katılıyorum'}
+          {v:1,t:'Kesinlikle<br>Katılmıyorum',s:'--'},
+          {v:2,t:'Katıl-<br>mıyorum',s:'-'},
+          {v:3,t:'Kararsı-<br>zım',s:'○'},
+          {v:4,t:'Katılı-<br>yorum',s:'+'},
+          {v:5,t:'Kesinlikle<br>Katılıyorum',s:'++'}
         ].map(o => `
           <button class="lk-btn ${A[qd.id] === o.v ? 'sel-'+o.v+' selected' : ''}"
                   onclick="pickLikert('${qd.id}',${o.v},this)">
-            <span class="lk-num">${o.v}</span>
+            <span class="lk-num" data-symbol="${o.s}">${o.v}</span>
             <span class="lk-text">${o.t}</span>
           </button>`).join('')}
       </div>
@@ -543,6 +578,14 @@ function pickPQMulti(id, val, btn) {
 
 function advPQ() {
   const inp = document.getElementById('pq-inp');
+  const curQuestion = ALL_PQ[curPQ];
+  
+  // Eğer text veya textarea ise ve boş ise uyarı göster
+  if ((curQuestion.type === 'text' || curQuestion.type === 'textarea') && inp && !inp.value.trim()) {
+    showToast('⚠️ Lütfen doldurun veya soruyu geçebilirsiniz');
+    return;
+  }
+  
   if (inp && inp.value) PQA[ALL_PQ[curPQ].id] = inp.value;
   curPQ++;
   renderPQ();
@@ -944,7 +987,7 @@ function buildResults() {
 
     <div class="results-cta">
       <button class="btn-r btn-restart" onclick="restartAll()">🔄 Yeniden Başla</button>
-      <button class="btn-r btn-dl"      onclick="window.print()">🖨️ Yazdır</button>
+      <button class="btn-r btn-dl"      onclick="printResults()">🖨️ Analizi Yazdır</button>
     </div>
 
     <div style="text-align:center;font-size:.7rem;color:var(--ink-lt);margin-top:8px;line-height:1.6">
@@ -971,8 +1014,64 @@ function restartAll() {
   Object.keys(PQA).forEach(k => delete PQA[k]);
   totalXP = 0; curQ = 0; curPQ = 0; window._SD = null;
   flatQs = [];
-  document.getElementById('ni').value = '';
+  document.getElementById('ni-real').value = '';
+  document.getElementById('ni-nick').value = '';
   showScreen('s-splash');
+}
+
+/* ══════════════════════════════════════════════
+   PRINT PERSONA CARD
+══════════════════════════════════════════════ */
+function printPersona() {
+  if (!checkPrintPermission()) return;
+  window._printMode = 'persona';
+  window.print();
+}
+
+/* ══════════════════════════════════════════════
+   PRINT RESULTS
+══════════════════════════════════════════════ */
+function printResults() {
+  if (!checkPrintPermission()) return;
+  window._printMode = 'results';
+  window.print();
+}
+
+/* Print event listeners */
+window.addEventListener('beforeprint', () => {
+  const personaScreen = document.getElementById('s-persona');
+  const resultsScreen = document.getElementById('s-results');
+  
+  if (window._printMode === 'persona') {
+    resultsScreen.style.display = 'none';
+  } else if (window._printMode === 'results') {
+    personaScreen.style.display = 'none';
+  }
+});
+
+window.addEventListener('afterprint', () => {
+  document.getElementById('s-persona').style.display = '';
+  document.getElementById('s-results').style.display = '';
+});
+
+/* ══════════════════════════════════════════════
+   YAZDIRMA HAKKI KONTROL
+══════════════════════════════════════════════ */
+const MAX_XP = 480; // Maksimum XP (48 soru * 10)
+const XP_PER_PRINT = 160; // 3 yazdırma hakkı
+
+function getPrintCredits() {
+  return Math.floor(totalXP / XP_PER_PRINT);
+}
+
+function checkPrintPermission() {
+  if (getPrintCredits() > 0) {
+    return true;
+  } else {
+    const needed = XP_PER_PRINT - totalXP;
+    showToast(`⚠️ Yazdırma için ${needed} XP daha gerekli (${totalXP}/${XP_PER_PRINT} XP)`);
+    return false;
+  }
 }
 
 /* ══════════════════════════════════════════════
