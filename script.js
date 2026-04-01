@@ -1,106 +1,107 @@
-﻿/* ==============================================
-   SORU HAVUZLARI – 6 havuz, her birinde 10 soru
+﻿/* ══════════════════════════════════════════════
+   SORU HAVUZLARI — 6 havuz, her birinde 10 soru
    b1=Sosyal Kaygı  b2=Bağlılık  b3=Benlik
    _real = Gerçek Hayat   _dig = Dijital Hayat
-============================================== */
+══════════════════════════════════════════════ */
 
 const POOL = {
+
   b1_real: [
     {id:'b1r1', text:'Başkalarının benim hakkımda ne düşündüğünden endişelenirim.',          rev:false},
     {id:'b1r2', text:'Yeni insanlarla tanıştığımda tedirgin olurum.',                        rev:false},
     {id:'b1r3', text:'Bir grup insanla birlikteyken çekinik ya da sessiz kalırım.',          rev:false},
-    {id:'b1r4', text:'Eleştirilmekten ya da yanlış anlaşılmaktan korkarım.',                 rev:false},
+    {id:'b1r4', text:'Eleştirilmekten ya da yanlış anlaşılmaktan korkarım.',                rev:false},
     {id:'b1r5', text:'Kendimi rahatça ifade edebildiğimi hissederim.',                       rev:true},
-    {id:'b1r6', text:'Görünüşümle ilgili başkalarının ne düşündüğünü kafama takarım.',       rev:false},
-    {id:'b1r7', text:'Fotoğraf çekilmek beni rahatsız eder.',                                rev:false},
+    {id:'b1r6', text:'Görünüşümle ilgili başkalarının ne düşündüğünü kafama takarım.',      rev:false},
+    {id:'b1r7', text:'Fotoğraf çekilmek beni rahatsız eder.',                               rev:false},
     {id:'b1r8', text:'Görünüşümden dolayı insanların beni olumsuz değerlendireceğinden korkarım.', rev:false},
-    {id:'b1r9', text:'Topluluk önünde konuşmak beni kaygılandırır.',                         rev:false},
-    {id:'b1r10',text:'Sosyal ortamlarda kendimi geri planda tutarım.',                       rev:false},
+    {id:'b1r9', text:'Topluluk önünde konuşmak beni kaygılandırır.',                        rev:false},
+    {id:'b1r10',text:'Sosyal ortamlarda kendimi geri planda tutarım.',                      rev:false},
   ],
 
   b1_dig: [
     {id:'b1d1', text:'Çevrimiçi ortamda başkalarının benim hakkımda ne düşündüğünden endişelenirim.', rev:false},
-    {id:'b1d2', text:'Çevrimiçi yeni insanlarla iletişime geçmek beni tedirgin eder.',       rev:false},
-    {id:'b1d3', text:'Çevrimiçi grup sohbetlerinde çekinik ya da sessiz kalırım.',           rev:false},
-    {id:'b1d4', text:'Sosyal medyada eleştirilmekten ya da yanlış anlaşılmaktan korkarım.',  rev:false},
-    {id:'b1d5', text:'Dijital ortamda kendimi rahatça ifade edebildiğimi hissederim.',       rev:true},
+    {id:'b1d2', text:'Çevrimiçi yeni insanlarla iletişime geçmek beni tedirgin eder.',      rev:false},
+    {id:'b1d3', text:'Çevrimiçi grup sohbetlerinde çekinik ya da sessiz kalırım.',          rev:false},
+    {id:'b1d4', text:'Sosyal medyada eleştirilmekten ya da yanlış anlaşılmaktan korkarım.',rev:false},
+    {id:'b1d5', text:'Dijital ortamda kendimi rahatça ifade edebildiğimi hissederim.',      rev:true},
     {id:'b1d6', text:'Profilim / fotoğraflarım hakkında başkalarının ne düşündüğünü kafama takarım.', rev:false},
-    {id:'b1d7', text:'Fotoğraflarımın veya videolarımın paylaşılması beni rahatsız eder.',   rev:false},
-    {id:'b1d8', text:'Dijital görünüşümden dolayı insanların beni olumsuz değerlendireceğinden korkarım.',rev:false},
-    {id:'b1d9', text:'Sosyal medyada yorum yazmaktan çekinirim.',                            rev:false},
-    {id:'b1d10',text:'Beğeni sayım az olduğunda kendimi yetersiz hissederim.',               rev:false},
+    {id:'b1d7', text:'Fotoğraflarımın veya videolarımın paylaşılması beni rahatsız eder.', rev:false},
+    {id:'b1d8', text:'Dijital görünüşümden dolayı insanların beni olumsuz değerlendireceğinden korkarım.', rev:false},
+    {id:'b1d9', text:'Sosyal medyada yorum yazmaktan çekinirim.',                           rev:false},
+    {id:'b1d10',text:'Beğeni sayım az olduğunda kendimi yetersiz hissederim.',              rev:false},
   ],
 
   b2_real: [
-    {id:'b2r1', text:'Kendimi çevremdeki insanlara ait hissediyorum.',                       rev:false},
-    {id:'b2r2', text:'Önem verdiğim insanlarla gerçek anlamda bağlı hissediyorum.',          rev:false},
-    {id:'b2r3', text:'Zor anlarda yanımda olan insanlar var.',                               rev:false},
-    {id:'b2r4', text:'Çevremdeki insanlarla anlamlı paylaşımlarım oluyor.',                  rev:false},
-    {id:'b2r5', text:'Kendimi yalnız ve kopuk hissediyorum.',                                rev:true},
-    {id:'b2r6', text:'Çevremdeki insanlar beni gerçekten tanıyor.',                          rev:false},
-    {id:'b2r7', text:'Kendimi bir grubun ya da topluluğun parçası olarak hissediyorum.',     rev:false},
-    {id:'b2r8', text:'İnsanlarla kurduğum ilişkiler yüzeysel kalıyor.',                      rev:true},
-    {id:'b2r9', text:'Arkadaşlarımla vakit geçirmek bana iyi geliyor.',                      rev:false},
-    {id:'b2r10',text:'Sosyal çevrem zor anlarda beni destekler.',                            rev:false},
+    {id:'b2r1', text:'Kendimi çevremdeki insanlara ait hissediyorum.',                      rev:false},
+    {id:'b2r2', text:'Önem verdiğim insanlarla gerçek anlamda bağlı hissediyorum.',         rev:false},
+    {id:'b2r3', text:'Zor anlarda yanımda olan insanlar var.',                              rev:false},
+    {id:'b2r4', text:'Çevremdeki insanlarla anlamlı paylaşımlarım oluyor.',                rev:false},
+    {id:'b2r5', text:'Kendimi yalnız ve kopuk hissediyorum.',                               rev:true},
+    {id:'b2r6', text:'Çevremdeki insanlar beni gerçekten tanıyor.',                         rev:false},
+    {id:'b2r7', text:'Kendimi bir grubun ya da topluluğun parçası olarak hissediyorum.',    rev:false},
+    {id:'b2r8', text:'İnsanlarla kurduğum ilişkiler yüzeysel kalıyor.',                    rev:true},
+    {id:'b2r9', text:'Arkadaşlarımla vakit geçirmek bana iyi geliyor.',                    rev:false},
+    {id:'b2r10',text:'Sosyal çevrem zor anlarda beni destekler.',                           rev:false},
   ],
 
   b2_dig: [
-    {id:'b2d1', text:'Çevrimiçi topluluklarda kendimi ait hissediyorum.',                    rev:false},
+    {id:'b2d1', text:'Çevrimiçi topluluklarda kendimi ait hissediyorum.',                   rev:false},
     {id:'b2d2', text:'Dijital ortamda iletişim kurduğum insanlarla gerçekten bağlı hissediyorum.', rev:false},
-    {id:'b2d3', text:'Zor anlarda çevrimiçi destek bulurum.',                                rev:false},
-    {id:'b2d4', text:'Sosyal medyada anlamlı paylaşımlar yapıyorum.',                        rev:false},
-    {id:'b2d5', text:'Sosyal medyayı aktif kullansam da yalnız ve kopuk hissediyorum.',      rev:true},
-    {id:'b2d6', text:'Çevrimiçi bağlantılarım beni gerçekten tanıyor.',                      rev:false},
-    {id:'b2d7', text:'Kendimi bir dijital topluluğun parçası olarak hissediyorum.',          rev:false},
-    {id:'b2d8', text:'Çevrimiçi ilişkilerim yüzeysel kalıyor.',                              rev:true},
-    {id:'b2d9', text:'DM / mesaj yoluyla kurulan ilişkiler bana anlamlı geliyor.',           rev:false},
-    {id:'b2d10',text:'Çevrimiçi arkadaşlarımın desteğini hissediyorum.',                     rev:false},
+    {id:'b2d3', text:'Zor anlarda çevrimiçi destek bulurum.',                               rev:false},
+    {id:'b2d4', text:'Sosyal medyada anlamlı paylaşımlar yapıyorum.',                       rev:false},
+    {id:'b2d5', text:'Sosyal medyayı aktif kullansam da yalnız ve kopuk hissediyorum.',     rev:true},
+    {id:'b2d6', text:'Çevrimiçi bağlantılarım beni gerçekten tanıyor.',                    rev:false},
+    {id:'b2d7', text:'Kendimi bir dijital topluluğun parçası olarak hissediyorum.',         rev:false},
+    {id:'b2d8', text:'Çevrimiçi ilişkilerim yüzeysel kalıyor.',                             rev:true},
+    {id:'b2d9', text:'DM / mesaj yoluyla kurulan ilişkiler bana anlamlı geliyor.',          rev:false},
+    {id:'b2d10',text:'Çevrimiçi arkadaşlarımın desteğini hissediyorum.',                   rev:false},
   ],
 
   b3_real: [
-    {id:'b3r1', text:'Gerçek beni olduğum gibi yansıtabiliyorum.',                           rev:false},
-    {id:'b3r2', text:'Kendimi samimi ve otantik biçimde ifade edebiliyorum.',                rev:false},
-    {id:'b3r3', text:"Başkalarının beklentilerine göre farklı bir 'ben' canlandırıyorum.",   rev:true},
-    {id:'b3r4', text:'Kendimi olduğumdan farklı göstermem gerektiğini hissediyorum.',        rev:true},
-    {id:'b3r5', text:'İçimdeki ben ile dışarıya yansıttığım ben tutarlı.',                   rev:false},
-    {id:'b3r6', text:'İnsanlarla iletişim kurmak bana kolay geliyor.',                       rev:false},
-    {id:'b3r7', text:'Beğenilmek ya da onay almak için davranışlarımı değiştiriyorum.',      rev:true},
-    {id:'b3r8', text:'Kendimi özgürce ve baskısız biçimde ifade edebiliyorum.',              rev:false},
-    {id:'b3r9', text:'Farklı sosyal gruplarda kendimi farklı gösteririm.',                   rev:true},
-    {id:'b3r10',text:'Duygularımı insanlarla açıkça paylaşabilirim.',                        rev:false},
+    {id:'b3r1', text:'Gerçek beni olduğum gibi yansıtabiliyorum.',                          rev:false},
+    {id:'b3r2', text:'Kendimi samimi ve otantik biçimde ifade edebiliyorum.',               rev:false},
+    {id:'b3r3', text:"Başkalarının beklentilerine göre farklı bir 'ben' canlandırıyorum.",  rev:true},
+    {id:'b3r4', text:'Kendimi olduğumdan farklı göstermem gerektiğini hissediyorum.',       rev:true},
+    {id:'b3r5', text:'İçimdeki ben ile dışarıya yansıttığım ben tutarlı.',                 rev:false},
+    {id:'b3r6', text:'İnsanlarla iletişim kurmak bana kolay geliyor.',                     rev:false},
+    {id:'b3r7', text:'Beğenilmek ya da onay almak için davranışlarımı değiştiriyorum.',    rev:true},
+    {id:'b3r8', text:'Kendimi özgürce ve baskısız biçimde ifade edebiliyorum.',             rev:false},
+    {id:'b3r9', text:'Farklı sosyal gruplarda kendimi farklı gösteririm.',                  rev:true},
+    {id:'b3r10',text:'Duygularımı insanlarla açıkça paylaşabilirim.',                       rev:false},
   ],
 
   b3_dig: [
-    {id:'b3d1', text:'Sosyal medyada gerçek beni yansıtabiliyorum.',                         rev:false},
-    {id:'b3d2', text:'Çevrimiçi ortamda kendimi samimi biçimde ifade edebiliyorum.',         rev:false},
+    {id:'b3d1', text:'Sosyal medyada gerçek beni yansıtabiliyorum.',                        rev:false},
+    {id:'b3d2', text:'Çevrimiçi ortamda kendimi samimi biçimde ifade edebiliyorum.',        rev:false},
     {id:'b3d3', text:"Sosyal medyada başkalarının beklentilerine göre farklı bir 'ben' canlandırıyorum.", rev:true},
-    {id:'b3d4', text:'Sosyal medyada olduğumdan farklı görünmem gerektiğini hissediyorum.',  rev:true},
-    {id:'b3d5', text:'Sosyal medya profilim gerçek benliğimle tutarlı.',                     rev:false},
-    {id:'b3d6', text:'Çevrimiçi insanlarla iletişim kurmak bana kolay geliyor.',             rev:false},
+    {id:'b3d4', text:'Sosyal medyada olduğumdan farklı görünmem gerektiğini hissediyorum.',rev:true},
+    {id:'b3d5', text:'Sosyal medya profilim gerçek benliğimle tutarlı.',                    rev:false},
+    {id:'b3d6', text:'Çevrimiçi insanlarla iletişim kurmak bana kolay geliyor.',           rev:false},
     {id:'b3d7', text:'Beğeni veya onay almak için sosyal medyadaki içeriklerimi değiştiriyorum.', rev:true},
     {id:'b3d8', text:'Sosyal medyada kendimi özgürce ve baskısız biçimde ifade edebiliyorum.', rev:false},
-    {id:'b3d9', text:'Farklı platformlarda farklı bir kimlik sergilerim.',                   rev:true},
-    {id:'b3d10',text:'Duygularımı sosyal medyada açıkça paylaşabilirim.',                    rev:false},
+    {id:'b3d9', text:'Farklı platformlarda farklı bir kimlik sergilerim.',                  rev:true},
+    {id:'b3d10',text:'Duygularımı sosyal medyada açıkça paylaşabilirim.',                   rev:false},
   ],
 };
 
-/* -- Seçim sayıları – toplam = 25 -- */
+/* ── Seçim sayıları — toplam = 25 ── */
 const PICKS = { b1r:4, b1d:4, b2r:4, b2d:4, b3r:5, b3d:4 }; // 4+4+4+4+5+4 = 25
 
-/* -- Section meta -- */
+/* ── Section meta ── */
 const SEC_META = {
-  b1: { name:'😰 Sosyal Kaygı',  emoji:'😰', src:'LSAS (Liebowitz,1987)',
+  b1: { name:'🔒 Sosyal Kaygı',   emoji:'😰', src:'LSAS (Liebowitz,1987)',
         color:{a:'#E8547A',lt:'#FFE0E8',md:'#FFBCCB',dk:'#C03060',fill:'linear-gradient(90deg,#FFBCCB,#E8547A)'} },
-  b2: { name:'🤝 Sosyal Bağlılık',emoji:'🤝', src:'SBÖ (Duru,2007)',
+  b2: { name:'🔗 Sosyal Bağlılık',emoji:'🤝', src:'SBÖ (Duru,2007)',
         color:{a:'#8B68D4',lt:'#EDE8FF',md:'#C9B5F0',dk:'#6845B8',fill:'linear-gradient(90deg,#C9B5F0,#8B68D4)'} },
-  b3: { name:'🎭 Benlik Sunumu',  emoji:'🎭', src:'İBSÖ (Dalkılıç,2025)',
+  b3: { name:'🪞 Benlik Sunumu',  emoji:'🎭', src:'ÇBSÖ (Dalkılıç,2025)',
         color:{a:'#3DAB8C',lt:'#E0F5EC',md:'#90D0B0',dk:'#2A8068',fill:'linear-gradient(90deg,#90D0B0,#3DAB8C)'} },
 };
 
-/* ==============================================
-   PERSONA SORULARI – GERÇEK & DİJİTAL AYRI
+/* ══════════════════════════════════════════════
+   PERSONA SORULARI — GERÇEK & DİJİTAL AYRI
    Her ortam için 8 soru; 3 ortak + 5 ortama özel
-====================================== */
+══════════════════════════════════════════════ */
 
 /* Ortak sorular (her iki karta da gider) */
 const PQ_COMMON = [
@@ -110,7 +111,7 @@ const PQ_COMMON = [
     placeholder:'"Kendim olmak en cesur eylem."' },
 
   { id:'pqc2', type:'textarea',
-    label:'Kendini kısaca tanıt – kim olduğunu anlat.',
+    label:'Kendini kısaca tanıt — kim olduğunu anlat.',
     hint:'İlgi alanların, geçmişin, nelerden hoşlandığın.',
     placeholder:'Örn: 3. sınıf psikoloji öğrencisiyim...' },
 
@@ -178,27 +179,28 @@ const PQ_DEMO = [
     opts:['Kadın','Erkek','Non-binary','Belirtmek istemiyorum'] },
 ];
 
-/* Tüm persona soruları sırası: Ortak(3) – Gerçek(5) – Dijital(5) – Demo(2) = 15 soru */
+/* Tüm persona soruları sırası:
+   Ortak(3) → Gerçek(5) → Dijital(5) → Demo(2) = 15 soru */
 const ALL_PQ = [...PQ_COMMON, ...PQ_REAL, ...PQ_DIG, ...PQ_DEMO];
 
-/* ==============================================
+/* ══════════════════════════════════════════════
    PERSONA TİPLERİ
-====================================== */
+══════════════════════════════════════════════ */
 const PERSONA_TYPES = {
   real: [
-    { range:[0,45],   name:'Sessiz Gözlemci',   emoji:'🦉',
+    { range:[0,45],   name:'Sessiz Gözlemci',   emoji:'🌙',
       tagline:'Derinlemesine düşünen, sözcüklerini dikkatle seçen; gerçek bağlar kurduğunda son derece sadık ve güçlü.' },
     { range:[46,65],  name:'Dengeli Yolcu',      emoji:'⚖️',
       tagline:'Sosyal durumları hem içgüdüsel hem düşünceli değerlendirirsin. Esnek, uyumlu ve güvenilir bir sosyal profil.' },
-    { range:[66,100], name:'Açık Kalp',          emoji:'🦁',
+    { range:[66,100], name:'Açık Kalp',           emoji:'🌻',
       tagline:'Gerçek hayatta tam anlamıyla kendinsin. Otantikliğin ve bağlılık gücün çevrendeki insanlara ilham veriyor.' },
   ],
   digital: [
-    { range:[0,45],   name:'Dijital Gölge',      emoji:'🥷',
+    { range:[0,45],   name:'Dijital Gölge',       emoji:'👤',
       tagline:'Çevrimiçi ortamda tedirgin ve çekimsersin. Dijital dünya seni zorlasa da bu tamamen normaldir.' },
-    { range:[46,65],  name:'Seçici Paylaşımcı',   emoji:'🕵️',
+    { range:[46,65],  name:'Seçici Paylaşımcı',   emoji:'🎛️',
       tagline:'Sosyal medyada ne paylaşacağını özenle seçiyorsun. Dijital kimliğini bilinçli şekillendiriyorsun.' },
-    { range:[66,100], name:'Dijital Özgün',        emoji:'🚀',
+    { range:[66,100], name:'Dijital Özgün',        emoji:'✨',
       tagline:'Çevrimiçi ortamda kendinle barışık, özgün ve bağlanabilen birisin. Dijital ve gerçek benliğin uyumlu.' },
   ],
 };
@@ -207,9 +209,9 @@ function getPersonaType(pct100, env) {
   return PERSONA_TYPES[env].find(p => pct100 >= p.range[0] && pct100 <= p.range[1]) || PERSONA_TYPES[env][1];
 }
 
-/* ==============================================
+/* ══════════════════════════════════════════════
    STATE
-====================================== */
+══════════════════════════════════════════════ */
 const A   = {};   // anket cevapları   { questionId: 1-5 }
 const PQA = {};   // persona q cevapları { questionId: değer }
 let userName = '';
@@ -219,10 +221,12 @@ let curQ     = 0;
 let curPQ    = 0;
 let popCB    = null;
 
+/* ── Soru meta (her soru hangi section/env/renk) ── */
+// flatQs elemanları: { id, text, rev, secId, envType, secMeta, no }
 
-/* ==============================================
-   FISHER-YATES SHUFFLE + SEÇİM
-====================================== */
+/* ══════════════════════════════════════════════
+   FISHER-YATES SHUFFLE + SEÇIM
+══════════════════════════════════════════════ */
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -238,19 +242,19 @@ function buildSession() {
     b1_real: shuffle(POOL.b1_real).slice(0, PICKS.b1r),
     b1_dig:  shuffle(POOL.b1_dig ).slice(0, PICKS.b1d),
     b2_real: shuffle(POOL.b2_real).slice(0, PICKS.b2r),
-    b2_dig:  shuffle(POOL.b2_dig).slice(0, PICKS.b2d),
+    b2_dig:  shuffle(POOL.b2_dig ).slice(0, PICKS.b2d),
     b3_real: shuffle(POOL.b3_real).slice(0, PICKS.b3r),
-    b3_dig:  shuffle(POOL.b3_dig).slice(0, PICKS.b3d),
+    b3_dig:  shuffle(POOL.b3_dig ).slice(0, PICKS.b3d),
   };
 
-  /* Oturum soru dizisi: B1Real – B1Dig – B2Real – B2Dig – B3Real – B3Dig */
+  /* Oturum soru dizisi: B1Real → B1Dig → B2Real → B2Dig → B3Real → B3Dig */
   const order = [
-    { qs: picked.b1_real, secId:'b1', envType:'real' },
-    { qs: picked.b1_dig, secId:'b1', envType:'digital' },
-    { qs: picked.b2_real, secId:'b2', envType:'real' },
-    { qs: picked.b2_dig, secId:'b2', envType:'digital' },
-    { qs: picked.b3_real, secId:'b3', envType:'real' },
-    { qs: picked.b3_dig, secId:'b3', envType:'digital' },
+    { qs: picked.b1_real, secId:'b1', envType:'real'    },
+    { qs: picked.b1_dig,  secId:'b1', envType:'digital' },
+    { qs: picked.b2_real, secId:'b2', envType:'real'    },
+    { qs: picked.b2_dig,  secId:'b2', envType:'digital' },
+    { qs: picked.b3_real, secId:'b3', envType:'real'    },
+    { qs: picked.b3_dig,  secId:'b3', envType:'digital' },
   ];
 
   flatQs = [];
@@ -263,11 +267,12 @@ function buildSession() {
         envType,
         secMeta: SEC_META[secId],
         no: 'S' + globalIdx++,
-        envLabel: envType === 'real' ? '🌿 Gerçek Hayat' : '📱 Dijital Hayat',
+        /* envLabel için */ envLabel: envType === 'real' ? '🌿 Gerçek Hayat' : '📡 Dijital Hayat',
       });
     });
   });
 
+  /* Grup sınırlarını işaretle (bölüm/env geçişleri için) */
   flatQs.forEach((q, i) => {
     const next = flatQs[i + 1];
     q.isLastOfGroup = !next || next.secId !== q.secId || next.envType !== q.envType;
@@ -277,9 +282,9 @@ function buildSession() {
   return flatQs;
 }
 
-/* ==============================================
+/* ══════════════════════════════════════════════
    EKRAN YÖNETİMİ
-====================================== */
+══════════════════════════════════════════════ */
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -290,9 +295,9 @@ function confirmBack() {
   if (confirm('Ana menüye dönmek istiyor musun?')) showScreen('s-splash');
 }
 
-/* ==============================================
+/* ══════════════════════════════════════════════
    BAŞLAT
-====================================== */
+══════════════════════════════════════════════ */
 function startSurvey() {
   userName = document.getElementById('ni').value.trim() || 'Katılımcı';
   buildSession();
@@ -301,29 +306,30 @@ function startSurvey() {
   showScreen('s-question');
 }
 
-/* ==============================================
+/* ══════════════════════════════════════════════
    SORU RENDER
-====================================== */
+══════════════════════════════════════════════ */
 function renderQ() {
   if (curQ >= flatQs.length) { goPersonaQ(); return; }
 
-  const qd = flatQs[curQ];
-  const c = qd.secMeta.color;
+  const qd  = flatQs[curQ];
+  const c   = qd.secMeta.color;
   const isReal = qd.envType === 'real';
   const envColor = isReal ? '#3DAB8C' : '#8B68D4';
-  const envBg = isReal ? '#E0F5EC' : '#EDE8FF';
-  const envBdr = isReal ? '#90D0B0' : '#C9B5F0';
+  const envBg    = isReal ? '#E0F5EC' : '#EDE8FF';
+  const envBdr   = isReal ? '#90D0B0' : '#C9B5F0';
 
   const total = flatQs.length;
-  const pct = Math.round((curQ / total) * 100);
+  const pct   = Math.round((curQ / total) * 100);
 
-  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-fill').style.width      = pct + '%';
   document.getElementById('prog-fill').style.background = c.fill;
-  document.getElementById('tb-sec').textContent = qd.secMeta.name + ' — ' + qd.envLabel;
-  document.getElementById('tb-cnt').textContent = (curQ + 1) + ' / ' + total;
-  document.getElementById('btn-back').disabled = (curQ === 0);
-  document.getElementById('btn-next').disabled = (A[qd.id] === undefined);
+  document.getElementById('tb-sec').textContent  = qd.secMeta.name + ' · ' + qd.envLabel;
+  document.getElementById('tb-cnt').textContent  = (curQ + 1) + ' / ' + total;
+  document.getElementById('btn-back').disabled   = (curQ === 0);
+  document.getElementById('btn-next').disabled   = (A[qd.id] === undefined);
 
+  /* Grup dot'ları — aynı sec+env grubundaki sorular */
   const groupQs = flatQs.filter(q => q.secId === qd.secId && q.envType === qd.envType);
   document.getElementById('s-dots').innerHTML = groupQs.map(q => {
     let cls = A[q.id] !== undefined ? 'done' : 'future';
@@ -333,7 +339,7 @@ function renderQ() {
 
   document.getElementById('q-body').innerHTML = `
     <div class="q-env-tag slide-in" style="color:${envColor};border-color:${envBdr};background:${envBg}">
-      ${qd.envLabel} — ${qd.secMeta.name}
+      ${qd.envLabel} · ${qd.secMeta.name}
     </div>
     <div class="q-card slide-in">
       <div class="q-num-badge" style="color:${c.a};border-color:${c.md};background:${c.lt}">
@@ -356,10 +362,13 @@ function renderQ() {
           </button>`).join('')}
       </div>
     </div>
-    <div class="auto-hint">⚡ Seçim yapınca otomatik ilerler</div>
+    <div class="auto-hint">✨ Seçim yapınca otomatik ilerler</div>
   `;
 }
 
+/* ══════════════════════════════════════════════
+   LİKERT SEÇİMİ
+══════════════════════════════════════════════ */
 function pickLikert(qid, val, btn) {
   const fresh = A[qid] === undefined;
   A[qid] = val;
@@ -369,6 +378,7 @@ function pickLikert(qid, val, btn) {
   btn.classList.add('sel-' + val, 'selected');
   document.getElementById('btn-next').disabled = false;
 
+  /* dot güncelle */
   const qd = flatQs[curQ];
   const groupQs = flatQs.filter(q => q.secId === qd.secId && q.envType === qd.envType);
   document.getElementById('s-dots').innerHTML = groupQs.map(q => {
@@ -398,10 +408,13 @@ function autoAdv() {
 function nextQ() { autoAdv(); }
 function prevQ() { if (curQ > 0) { curQ--; renderQ(); } }
 
+/* ══════════════════════════════════════════════
+   POPUP (bölüm/ortam geçişi)
+══════════════════════════════════════════════ */
 function showPopup(qd, isSec, cb) {
   popCB = cb;
-  const c = qd.secMeta.color;
-  const nextQ = flatQs[curQ + 1];
+  const c      = qd.secMeta.color;
+  const nextQ  = flatQs[curQ + 1];
   const nextMeta = nextQ ? SEC_META[nextQ.secId] : null;
   const isReal = qd.envType === 'real';
   const p = document.getElementById('sc-popup');
@@ -410,17 +423,19 @@ function showPopup(qd, isSec, cb) {
     p.innerHTML = `
       <div class="scp-emoji">🎉</div>
       <div class="scp-title" style="color:${c.a}">${qd.secMeta.name} Tamamlandı!</div>
-      <div class="scp-sub">${nextMeta ? 'Sırada: <strong>' + nextMeta.name + '</strong>' : 'Son bölümdeydin!'}<br><br>💎 ${totalXP} XP kazandın!</div>
-      <button class="scp-btn" style="background:linear-gradient(135deg,${nextMeta ? nextMeta.color.a : c.a},${nextMeta ? nextMeta.color.md : c.md})" onclick="closePopup()">
-        ${nextMeta ? '▶️ ' + nextMeta.name + ' →' : '🎟️ Kişi Kartına Geç →'}
+      <div class="scp-sub">${nextMeta ? 'Sırada: <strong>' + nextMeta.name + '</strong>' : 'Son bölümdeydin!'}<br><br>⭐ ${totalXP} XP kazandın!</div>
+      <button class="scp-btn" style="background:linear-gradient(135deg,${nextMeta ? nextMeta.color.a : c.a},${nextMeta ? nextMeta.color.md : c.md})"
+              onclick="closePopup()">
+        ${nextMeta ? '🚀 ' + nextMeta.name + ' →' : '🪪 Kişi Kartına Geç →'}
       </button>`;
   } else {
     p.innerHTML = `
-      <div class="scp-emoji">${isReal ? '📱' : '🌿'}</div>
+      <div class="scp-emoji">${isReal ? '🌿' : '📡'}</div>
       <div class="scp-title" style="color:${c.a}">${isReal ? 'Gerçek Hayat' : 'Dijital Hayat'} Tamamlandı!</div>
       <div class="scp-sub">${isReal ? 'Şimdi aynı konuyu <strong>dijital ortam</strong> için değerlendiriyoruz.' : 'Bu bölümün dijital kısmı bitti!'}</div>
-      <button class="scp-btn" style="background:linear-gradient(135deg,${c.a},${c.md})" onclick="closePopup()">
-        ${isReal ? '📱 Dijital Sorulara Geç →' : '➡️ Devam Et'}
+      <button class="scp-btn" style="background:linear-gradient(135deg,${c.a},${c.md})"
+              onclick="closePopup()">
+        ${isReal ? '📡 Dijital Sorulara Geç →' : '➡️ Devam Et'}
       </button>`;
   }
 
@@ -433,6 +448,9 @@ function closePopup() {
   if (popCB) { popCB(); popCB = null; }
 }
 
+/* ══════════════════════════════════════════════
+   PERSONA SORULARI EKRANI
+══════════════════════════════════════════════ */
 function goPersonaQ() {
   curPQ = 0;
   showScreen('s-persona-q');
@@ -445,41 +463,55 @@ function renderPQ() {
 
   const q = ALL_PQ[curPQ];
 
+  /* progress */
   document.getElementById('pq-prog').style.width = Math.round((curPQ / total) * 100) + '%';
-  document.getElementById('pq-cnt').textContent = (curPQ + 1) + ' / ' + total;
+  document.getElementById('pq-cnt').textContent  = (curPQ + 1) + ' / ' + total;
 
-  let groupLabel = '💡 Genel';
-  if (PQ_COMMON.find(x => x.id === q.id)) groupLabel = '👤 Genel Bilgiler';
-  else if (PQ_REAL.find(x => x.id === q.id)) groupLabel = '🌿 Gerçek Hayat Profili';
-  else if (PQ_DIG.find(x => x.id === q.id)) groupLabel = '📱 Dijital Hayat Profili';
+  /* hangi gruba ait? etiket */
+  let groupLabel = '🌐 Genel';
+  if (PQ_COMMON.find(x => x.id === q.id)) groupLabel = '🌐 Genel Bilgiler';
+  else if (PQ_REAL.find(x => x.id === q.id))   groupLabel = '🌿 Gerçek Hayat Profili';
+  else if (PQ_DIG.find(x => x.id === q.id))    groupLabel = '📡 Dijital Hayat Profili';
   else groupLabel = '📊 Demografik';
 
+  /* dots */
   const dotsH = ALL_PQ.map((_, i) => {
     let cls = PQA[ALL_PQ[i].id] !== undefined ? 'done' : 'future';
     if (i === curPQ) cls = 'curr';
     return '<div class="pq-dot ' + cls + '" onclick="jumpPQ(' + i + ')"></div>';
   }).join('');
 
+  /* input */
   let inputHTML = '';
   const selVal = PQA[q.id];
   const selArr = Array.isArray(selVal) ? selVal : [];
 
   if (q.type === 'text') {
-    inputHTML = `<input class="pq-input" id="pq-inp" type="text" placeholder="${q.placeholder || ''}" value="${selVal || ''}" oninput="PQA['${q.id}']=this.value">`;
+    inputHTML = `<input class="pq-input" id="pq-inp" type="text"
+      placeholder="${q.placeholder || ''}" value="${selVal || ''}"
+      oninput="PQA['${q.id}']=this.value">`;
   } else if (q.type === 'textarea') {
-    inputHTML = `<textarea class="pq-textarea" id="pq-inp" placeholder="${q.placeholder || ''}" oninput="PQA['${q.id}']=this.value">${selVal || ''}</textarea>`;
+    inputHTML = `<textarea class="pq-textarea" id="pq-inp"
+      placeholder="${q.placeholder || ''}"
+      oninput="PQA['${q.id}']=this.value">${selVal || ''}</textarea>`;
   } else if (q.type === 'single') {
-    inputHTML = `<div class="pq-opts">${q.opts.map(o => `<button class="pq-opt${selVal===o?' sel':''}" onclick="pickPQSingle('${q.id}','${o}',this)">${o}</button>`).join('')}</div>`;
+    inputHTML = `<div class="pq-opts">
+      ${q.opts.map(o => `<button class="pq-opt${selVal===o?' sel':''}"
+        onclick="pickPQSingle('${q.id}','${o}',this)">${o}</button>`).join('')}
+    </div>`;
   } else if (q.type === 'multi') {
-    inputHTML = `<div class="pq-opts">${q.opts.map(o => `<button class="pq-opt${selArr.includes(o)?' sel-multi':''}" onclick="pickPQMulti('${q.id}','${o}',this)">${o}</button>`).join('')}</div>`;
+    inputHTML = `<div class="pq-opts">
+      ${q.opts.map(o => `<button class="pq-opt${selArr.includes(o)?' sel-multi':''}"
+        onclick="pickPQMulti('${q.id}','${o}',this)">${o}</button>`).join('')}
+    </div>`;
   }
 
   document.getElementById('pq-body').innerHTML = `
     <div class="pq-hero">
-      <div class="pq-hero-icon">🎨</div>
+      <div class="pq-hero-icon">🪪</div>
       <div>
         <h2>Kişi Kartın Oluşturuluyor</h2>
-        <p>${groupLabel} — ${curPQ + 1} / ${total}</p>
+        <p>${groupLabel} · ${curPQ + 1} / ${total}</p>
       </div>
     </div>
     <div class="pq-progress-row">${dotsH}</div>
@@ -488,8 +520,10 @@ function renderPQ() {
       ${q.hint ? '<div class="pq-hint">' + q.hint + '</div>' : ''}
       ${inputHTML}
     </div>
-    <button class="btn-pq-next" onclick="advPQ()">${curPQ < total - 1 ? 'Devam Et →' : '🪄 Kartımı Oluştur!'}</button>
-    <button class="btn-pq-skip" onclick="skipPQ()">Bu soruyu geç ⏭️</button>
+    <button class="btn-pq-next" onclick="advPQ()">
+      ${curPQ < total - 1 ? 'Devam Et →' : '✨ Kartımı Oluştur!'}
+    </button>
+    <button class="btn-pq-skip" onclick="skipPQ()">Bu soruyu geç →</button>
   `;
 }
 
@@ -514,9 +548,12 @@ function advPQ() {
   renderPQ();
 }
 
-function skipPQ() { curPQ++; renderPQ(); }
+function skipPQ()  { curPQ++; renderPQ(); }
 function jumpPQ(i) { curPQ = i; renderPQ(); }
 
+/* ══════════════════════════════════════════════
+   LOADING
+══════════════════════════════════════════════ */
 function startLoading() {
   showScreen('s-loading');
   const steps  = document.querySelectorAll('.load-step');
@@ -544,45 +581,57 @@ function startLoading() {
   adv();
 }
 
+/* ══════════════════════════════════════════════
+   PUANLAMA
+══════════════════════════════════════════════ */
 function scoreGroup(secId, envType) {
   const qs = flatQs.filter(q => q.secId === secId && q.envType === envType);
   const max = qs.length * 5;
   let raw = 0;
   qs.forEach(q => {
     let v = A[q.id] || 3;
-    if (q.rev) v = 6 - v; // Ters çevrilmiş sorular için akademik hesaplama
+    if (q.rev) v = 6 - v;
     raw += v;
   });
   return max > 0 ? Math.round((raw / max) * 100) : 50;
 }
 
+/* ══════════════════════════════════════════════
+   PERSONA KARTI OLUŞTUR
+══════════════════════════════════════════════ */
 function buildPersonaCard() {
+  /* Puanlar — her grup bağımsız */
   const sc = {
     b1r: scoreGroup('b1','real'),    b1d: scoreGroup('b1','digital'),
     b2r: scoreGroup('b2','real'),    b2d: scoreGroup('b2','digital'),
     b3r: scoreGroup('b3','real'),    b3d: scoreGroup('b3','digital'),
   };
 
+  /* Genel ortalama */
   const realAvg = Math.round((sc.b1r + sc.b2r + sc.b3r) / 3);
   const digAvg  = Math.round((sc.b1d + sc.b2d + sc.b3d) / 3);
 
   const realP = getPersonaType(realAvg, 'real');
   const digP  = getPersonaType(digAvg,  'digital');
 
+  /* Insight metni */
   const insights = [];
   const d1 = sc.b1d - sc.b1r, d2 = sc.b2d - sc.b2r, d3 = sc.b3d - sc.b3r;
-  
-  if (Math.abs(d1) > 8) insights.push(d1 > 0 ? 'Dijital ortamdaki sosyal kaygın gerçek hayatından <strong>belirgin şekilde daha yüksek</strong>.' : 'Gerçek hayattaki sosyal kaygın dijital ortamına göre <strong>daha fazla</strong>.');
+  if (Math.abs(d1) > 8) insights.push(d1 > 0
+    ? 'Dijital ortamdaki sosyal kaygın gerçek hayatından <strong>belirgin şekilde daha yüksek</strong>.'
+    : 'Gerçek hayattaki sosyal kaygın dijital ortamına göre <strong>daha fazla</strong>.');
   else insights.push('Sosyal kaygı düzeylerin gerçek ve dijital ortamda <strong>birbirine yakın</strong>.');
-  
-  if (Math.abs(d2) > 8) insights.push(d2 > 0 ? 'Dijital ortam sana daha güçlü bir <strong>aidiyet hissi</strong> veriyor.' : 'Gerçek hayattaki sosyal bağlılık hissin dijital ortamına göre <strong>çok daha güçlü</strong>.');
-  
-  if (Math.abs(d3) > 8) insights.push(d3 > 0 ? 'Dijital ortamda kendini <strong>daha özgür ve otantik</strong> ifade ediyorsun.' : 'Gerçek hayatta benlik sunumun dijital kimliğinden <strong>daha otantik</strong>.');
-  
+  if (Math.abs(d2) > 8) insights.push(d2 > 0
+    ? 'Dijital ortam sana daha güçlü bir <strong>aidiyet hissi</strong> veriyor.'
+    : 'Gerçek hayattaki sosyal bağlılık hissin dijital ortamına göre <strong>çok daha güçlü</strong>.');
+  if (Math.abs(d3) > 8) insights.push(d3 > 0
+    ? 'Dijital ortamda kendini <strong>daha özgür ve otantik</strong> ifade ediyorsun.'
+    : 'Gerçek hayatta benlik sunumun dijital kimliğinden <strong>daha otantik</strong>.');
   const insightText = insights.join(' ');
 
   window._SD = { sc, realP, digP, insightText, realAvg, digAvg };
 
+  /* Persona verisi — ortak alanlar */
   const common = {
     quote:      PQA.pqc1 || '"Kendim olmak en cesur eylem."',
     background: PQA.pqc2 || 'Belirtilmedi.',
@@ -591,6 +640,7 @@ function buildPersonaCard() {
     gender:     PQA.pqz2 || '—',
   };
 
+  /* Gerçek hayata özel */
   const realData = {
     goal:       PQA.pqr1 || '—',
     motivation: PQA.pqr2 || '—',
@@ -599,6 +649,7 @@ function buildPersonaCard() {
     conflict:   PQA.pqr5 || '—',
   };
 
+  /* Dijital hayata özel */
   const digData = {
     goal:       PQA.pqd1 || '—',
     motivation: PQA.pqd2 || '—',
@@ -619,6 +670,7 @@ function buildPersonaCard() {
     </div>
   `;
 
+  /* Bar animasyonu */
   setTimeout(() => {
     panels.querySelectorAll('.pc-mini-fill[data-w]').forEach(el => {
       el.style.width = el.dataset.w + '%';
@@ -630,248 +682,329 @@ function buildPersonaCard() {
   setTimeout(() => spawnConfetti('#FFBCCB'), 300);
 }
 
-/* ==============================================
-   EKSİK KALAN VE TAMAMLANAN UI FONKSİYONLARI
-============================================== */
-
+/* ══════════════════════════════════════════════
+   PERSONA GRID ÇİZİCİ — AYNI TASARIM, FARKLI VERİ
+══════════════════════════════════════════════ */
 function makePersonaGrid(envType, persona, sc, common, envData, insightText) {
-    const isReal = envType === 'real';
-    const c = isReal ? { a:'#3DAB8C', lt:'#E0F5EC', md:'#90D0B0' } : { a:'#8B68D4', lt:'#EDE8FF', md:'#C9B5F0' };
-    
-    // Metrikler
-    const m1 = isReal ? sc.b1r : sc.b1d; // Sosyal Kaygı
-    const m2 = isReal ? sc.b2r : sc.b2d; // Sosyal Bağlılık
-    const m3 = isReal ? sc.b3r : sc.b3d; // Benlik Sunumu
+  const isReal   = envType === 'real';
+  const c        = isReal
+    ? { a:'#3DAB8C', lt:'#E0F5EC', md:'#90D0B0', fill:'linear-gradient(90deg,#90D0B0,#3DAB8C)' }
+    : { a:'#8B68D4', lt:'#EDE8FF', md:'#C9B5F0', fill:'linear-gradient(90deg,#C9B5F0,#8B68D4)' };
+  const envLabel = isReal ? '🌿 Gerçek Persona' : '📡 Dijital Persona';
 
-    return `
-    <div class="pc-grid slide-in">
-        <div class="pc-header" style="background:${c.lt}">
-            <div class="pc-name-cell">
-                <div class="pc-avatar" style="background:white; border-color:${c.md}; color:${c.a}; font-size:1.5rem; display:flex; align-items:center; justify-content:center; border-radius:50%; width:40px; height:40px; border:2px solid;">${persona.emoji}</div>
-                <span style="margin-left:10px; font-weight:bold;">${userName}</span>
-            </div>
-            <div class="pc-type-cell" style="color:${c.a}; font-weight:bold;">
-                ${isReal ? '🌿 Gerçek Dünya' : '📱 Dijital Dünya'}
-            </div>
-        </div>
-        <div class="pc-body" style="padding:15px; display:flex; flex-direction:column; gap:15px;">
-            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-                <div class="pc-left-cell" style="flex:1; min-width:120px;">
-                    <div class="pc-cell-lbl" style="font-size:0.8rem; color:gray;">Persona Tipi</div>
-                    <div class="pc-cell-val" style="font-weight:800; font-size:1.2rem; color:${c.a}">${persona.name}</div>
-                </div>
-                <div class="pc-left-cell" style="flex:1; min-width:120px;">
-                    <div class="pc-cell-lbl" style="font-size:0.8rem; color:gray;">Demografik</div>
-                    <div class="pc-cell-val" style="font-weight:bold;">${common.age} Yaş / ${common.gender}</div>
-                </div>
-            </div>
-            
-            <div class="pc-right-cell" style="background:#f9f9f9; padding:10px; border-radius:8px; border-left:4px solid ${c.md}">
-                <div class="pc-cell-lbl" style="font-size:0.8rem; color:gray; margin-bottom:5px;">Karakter Mottosu</div>
-                <div class="pc-quote" style="font-style:italic;">${common.quote}</div>
-            </div>
+  /* 3 bölüm metriği — her kart kendi puanını gösterir */
+  const metrics = [
+    { lbl:'Sosyal Kaygı',    val: isReal ? sc.b1r : sc.b1d, fill:'linear-gradient(90deg,#FFBCCB,#E8547A)' },
+    { lbl:'Sosyal Bağlılık', val: isReal ? sc.b2r : sc.b2d, fill:'linear-gradient(90deg,#C9B5F0,#8B68D4)' },
+    { lbl:'Benlik Sunumu',   val: isReal ? sc.b3r : sc.b3d, fill:'linear-gradient(90deg,#90D0B0,#3DAB8C)' },
+  ];
 
-            <div class="pc-right-cell">
-                <div class="pc-cell-lbl" style="font-size:0.8rem; color:gray; margin-bottom:8px;">Metrik Analizi</div>
-                <div class="pc-metric-mini" style="display:flex; align-items:center; margin-bottom:5px;">
-                    <div class="pc-mini-val" style="width:75px; font-size:0.85rem;">Kaygı:</div>
-                    <div class="pc-mini-bar" style="flex:1; height:8px; background:#eee; border-radius:4px; overflow:hidden;"><div class="pc-mini-fill" style="width:${m1}%; height:100%; background:#E8547A; transition:width 1s;"></div></div>
-                    <div style="width:35px; text-align:right; font-size:0.8rem; font-weight:bold;">%${m1}</div>
-                </div>
-                <div class="pc-metric-mini" style="display:flex; align-items:center; margin-bottom:5px;">
-                    <div class="pc-mini-val" style="width:75px; font-size:0.85rem;">Bağlılık:</div>
-                    <div class="pc-mini-bar" style="flex:1; height:8px; background:#eee; border-radius:4px; overflow:hidden;"><div class="pc-mini-fill" style="width:${m2}%; height:100%; background:#8B68D4; transition:width 1s;"></div></div>
-                    <div style="width:35px; text-align:right; font-size:0.8rem; font-weight:bold;">%${m2}</div>
-                </div>
-                <div class="pc-metric-mini" style="display:flex; align-items:center; margin-bottom:5px;">
-                    <div class="pc-mini-val" style="width:75px; font-size:0.85rem;">Otantiklik:</div>
-                    <div class="pc-mini-bar" style="flex:1; height:8px; background:#eee; border-radius:4px; overflow:hidden;"><div class="pc-mini-fill" style="width:${m3}%; height:100%; background:#3DAB8C; transition:width 1s;"></div></div>
-                    <div style="width:35px; text-align:right; font-size:0.8rem; font-weight:bold;">%${m3}</div>
-                </div>
-            </div>
-        </div>
-        <div class="pc-bottom-split" style="display:flex; border-top:1px solid #eee; background:${c.lt}40; border-radius:0 0 8px 8px;">
-            <div class="pc-split-cell" style="flex:1; padding:10px; border-right:1px solid #eee;">
-                <div class="pc-cell-lbl" style="font-size:0.75rem; color:gray;">Motivasyon</div>
-                <div class="pc-cell-val" style="font-size:0.9rem; font-weight:bold;">${envData.motivation}</div>
-            </div>
-            <div class="pc-split-cell" style="flex:1; padding:10px;">
-                <div class="pc-cell-lbl" style="font-size:0.75rem; color:gray;">Temel İhtiyaç</div>
-                <div class="pc-cell-val" style="font-size:0.9rem; font-weight:bold;">${envData.need}</div>
-            </div>
-        </div>
+  /* Önemli noktalar — ortama göre dinamik */
+  const keyObs = isReal ? [
+    sc.b1r > 60 ? 'Gerçek hayatta sosyal kaygı belirgin' : 'Gerçek hayatta sosyal kaygı düşük',
+    sc.b2r > 55 ? 'Güçlü gerçek bağlılık'               : 'Gerçek bağlılık gelişebilir',
+    sc.b3r > 60 ? 'Yüksek otantiklik'                    : 'Otantiklik orta düzeyde',
+    envData.conflict !== '—' ? 'Çatışmada: ' + envData.conflict : null,
+  ].filter(Boolean) : [
+    sc.b1d > 60 ? 'Dijital kaygı belirgin'  : 'Dijital kaygı düşük',
+    sc.b2d > 55 ? 'Dijital bağlılık güçlü'  : 'Dijital bağlılık zayıf',
+    sc.b3d > 60 ? 'Dijitalde özgün ifade'   : 'Dijitalde performatif davranış',
+    envData.feedback !== '—' ? 'Eleştiriye tepki: ' + envData.feedback : null,
+  ].filter(Boolean);
+
+  /* Demografik satır */
+  const demoLine = [
+    common.age    !== '—' ? '🎂 ' + common.age    : null,
+    common.gender !== '—' ? '⚧ '  + common.gender : null,
+    isReal && envData.environments && envData.environments.length
+      ? '📍 ' + envData.environments.slice(0, 2).join(', ') : null,
+    !isReal && envData.platforms && envData.platforms.length
+      ? '📱 ' + envData.platforms.slice(0, 3).join(', ') : null,
+  ].filter(Boolean).join('<br>');
+
+  return `
+  <div class="pc-grid">
+
+    <!-- HEADER -->
+    <div class="pc-header">
+      <div class="pc-name-cell">
+        <span style="font-size:1.4rem">${persona.emoji}</span>
+        ${userName}
+      </div>
+      <div class="pc-type-cell" style="color:${c.a}">
+        <span>${persona.name}</span>
+        <span style="font-size:1.1rem">${isReal ? '🌿' : '📡'}</span>
+      </div>
     </div>
-    <div class="analysis-section" style="margin-top:20px; background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.05); border:1px solid #eee;">
-        <div class="analysis-title" style="font-weight:bold; color:#333; margin-bottom:8px;">🔍 İlişkisel Boşluk Analizi</div>
-        <div class="insight-box" style="font-size:0.95rem; line-height:1.5; color:#555;">${insightText}</div>
+
+    <!-- BODY -->
+    <div class="pc-body">
+
+      <!-- SOL SÜTUN -->
+      <div class="pc-left">
+
+        <div class="pc-left-cell">
+          <div class="pc-cell-lbl">👤 Profil</div>
+          <div class="pc-avatar"
+               style="background:${c.lt};border-color:${c.md};box-shadow:2px 2px 0 ${c.md}">
+            ${persona.emoji}
+          </div>
+          <div style="font-family:'Caveat',cursive;font-size:.85rem;font-weight:700;color:${c.a}">
+            ${persona.name}
+          </div>
+          <div style="font-size:.7rem;color:var(--ink-lt);margin-top:2px">${envLabel}</div>
+        </div>
+
+        <div class="pc-left-cell">
+          <div class="pc-cell-lbl">📊 Demografik</div>
+          <div style="font-size:.75rem;color:var(--ink-mid);line-height:1.6">
+            ${demoLine || '<span style="color:var(--ink-lt)">Belirtilmedi</span>'}
+          </div>
+        </div>
+
+        <div class="pc-left-cell">
+          <div class="pc-cell-lbl">⚡ Yetenekler</div>
+          <div>
+            ${common.skill_main !== '—'
+              ? `<span class="pc-tag" style="background:${c.lt};color:${c.a};border-color:${c.md}">${common.skill_main}</span>`
+              : '<span style="font-size:.75rem;color:var(--ink-lt)">Belirtilmedi</span>'}
+          </div>
+        </div>
+
+        <div class="pc-left-cell" style="flex:1">
+          <div class="pc-cell-lbl">📌 Önemli Noktalar</div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            ${keyObs.map(o =>
+              `<div style="font-size:.72rem;color:var(--ink);line-height:1.4;display:flex;gap:4px">
+                <span style="flex-shrink:0">•</span>${o}
+              </div>`
+            ).join('')}
+          </div>
+        </div>
+
+      </div><!-- /pc-left -->
+
+      <!-- SAĞ SÜTUN -->
+      <div class="pc-right">
+
+        <div class="pc-right-cell">
+          <div class="pc-cell-lbl">💬 Sevdiği Alıntı</div>
+          <div class="pc-quote">${common.quote}</div>
+        </div>
+
+        <div class="pc-right-cell">
+          <div class="pc-cell-lbl">📖 Arka Plan</div>
+          <div class="pc-cell-val">${common.background}</div>
+        </div>
+
+        <div class="pc-right-cell">
+          <div class="pc-cell-lbl">🎯 Hedefler & Davranışlar</div>
+          <div class="pc-cell-val">
+            <strong>Hedef:</strong> ${envData.goal}<br>
+            <strong>Profil:</strong> ${persona.tagline}
+          </div>
+          <div style="margin-top:8px">
+            ${metrics.map(m => `
+              <div class="pc-metric-mini" title="${m.lbl}">
+                <span style="font-size:.68rem;width:72px;flex-shrink:0;color:var(--ink-lt)">${m.lbl}</span>
+                <div class="pc-mini-bar">
+                  <div class="pc-mini-fill" data-w="${m.val}" style="width:0%;background:${m.fill}"></div>
+                </div>
+                <span class="pc-mini-val">${m.val}%</span>
+              </div>`).join('')}
+          </div>
+        </div>
+
+        <div class="pc-bottom-split">
+          <div class="pc-split-cell">
+            <div class="pc-cell-lbl">💡 Motivasyon</div>
+            <div class="pc-cell-val">${envData.motivation}</div>
+          </div>
+          <div class="pc-split-cell">
+            <div class="pc-cell-lbl">🫶 İhtiyaçlar</div>
+            <div class="pc-cell-val">${envData.need}</div>
+          </div>
+        </div>
+
+      </div><!-- /pc-right -->
+    </div><!-- /pc-body -->
+  </div><!-- /pc-grid -->
+
+  <!-- ANALİZ -->
+  <div class="analysis-section">
+    <div class="analysis-title">
+      📈 ${isReal ? 'Gerçek Hayat' : 'Dijital Hayat'} Analizi
     </div>
-    `;
+    <div class="analysis-row">
+      ${metrics.map(m => `
+        <div class="analysis-chip">
+          <div class="ach-lbl">${m.lbl}</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <div style="flex:1;height:6px;background:var(--paper2);border-radius:3px;overflow:hidden">
+              <div style="width:${m.val}%;height:100%;border-radius:3px;background:${m.fill}"></div>
+            </div>
+            <span style="font-family:'Caveat',cursive;font-size:.85rem;font-weight:800;color:var(--ink-mid)">${m.val}%</span>
+          </div>
+        </div>`).join('')}
+    </div>
+    <div class="insight-box">💡 ${insightText}</div>
+  </div>
+  `;
 }
 
+/* ══════════════════════════════════════════════
+   TAB GEÇİŞİ
+══════════════════════════════════════════════ */
 function switchPTab(type) {
   document.getElementById('tab-real').classList.toggle('active', type === 'real');
-  document.getElementById('tab-dig').classList.toggle('active', type === 'digital');
+  document.getElementById('tab-dig' ).classList.toggle('active', type === 'digital');
   document.getElementById('panel-real').classList.toggle('active', type === 'real');
-  document.getElementById('panel-dig').classList.toggle('active', type === 'digital');
+  document.getElementById('panel-dig' ).classList.toggle('active', type === 'digital');
 
   setTimeout(() => {
-    document.querySelectorAll('.pc-mini-fill').forEach(el => {
-      const targetW = el.style.width;
+    document.querySelectorAll('.pc-mini-fill[data-w]').forEach(el => {
       el.style.width = '0%';
-      setTimeout(() => { el.style.width = targetW; }, 60);
+      setTimeout(() => { el.style.width = el.dataset.w + '%'; }, 60);
     });
   }, 40);
 }
 
+/* ══════════════════════════════════════════════
+   SONUÇLAR
+══════════════════════════════════════════════ */
 function buildResults() {
-  if (!window._SD) {
-    showToast('Persona kartı verisi eksik; hesaplama yeniden yapılıyor...');
-    buildPersonaCard();
-  }
-
   const d = window._SD;
-  if (!d) {
-    showToast('Analiz verisi bulunamadı. Lütfen tekrar başlatın.');
-    return;
-  }
+  if (!d) return;
 
-  document.getElementById('rh-xp').textContent = '⭐ ' + totalXP + ' XP';
-
-  function meter(label, value, color) {
-    return `
-      <div class="analysis-chip" style="border-color:${color};">
-        <div class="ach-lbl">${label}</div>
-        <div style="height:8px;background:#eee;border-radius:6px;overflow:hidden;margin-top:6px;">
-          <div style="width:${value}%;height:100%;background:${color};transition:width 0.8s;"></div>
-        </div>
-        <div style="margin-top:4px;font-size:.75rem;color:#555;">%${value}</div>
-      </div>
-    `;
-  }
-
-  const donutParameters = (label, value, maxValue, color) => {
-    const radius = 50;
-    const circumference = 2 * Math.PI * radius;
-    const filled = (value / maxValue) * circumference;
-    return `
-    <div class="chart-item">
-      <div class="donut-wrap">
-        <svg viewBox="0 0 120 120">
-          <circle cx="60" cy="60" r="${radius}" fill="none" stroke="#eee" stroke-width="12"></circle>
-          <circle cx="60" cy="60" r="${radius}" fill="none" stroke="${color}" stroke-width="12"
-            stroke-dasharray="${filled} ${circumference - filled}"
-            stroke-dashoffset="${circumference * 0.25}"
-            stroke-linecap="round"></circle>
-        </svg>
-        <div class="donut-center">
-          <div class="dc-icon">${label}</div>
-          <div class="dc-real">%${value}</div>
-        </div>
-      </div>
-      <div class="chart-lbl">${label}</div>
-    </div>`;
+  const { sc, insightText } = d;
+  const C  = 2 * Math.PI * 36;
+  const Ci = 2 * Math.PI * 22;
+  const dA = (p, circ) => {
+    const f = (p / 100) * circ;
+    return f.toFixed(2) + ' ' + (circ - f).toFixed(2);
   };
 
-  document.getElementById('results-body').innerHTML = `
-    <div class="results-card">
-      <h3>Detaylı Analiz</h3>
-      <p><strong>Gerçek Persona:</strong> ${d.realP.name} (%${d.realAvg})</p>
-      <p><strong>Dijital Persona:</strong> ${d.digP.name} (%${d.digAvg})</p>
-      <p><strong>Fark:</strong> %${Math.abs(d.realAvg - d.digAvg)}</p>
-      <p><strong>İçgörü:</strong> ${d.insightText || 'Veri mevcut, analiz detaylanıyor...'}</p>
-      <div class="analysis-title" style="margin-top:14px;">📊 Kapsamlı Ölçüm Grafikleri</div>
-      <div class="charts-card">
-        <div class="charts-ttl">İç İçe Gerçek vs Dijital Donut Grafiği</div>
-        <div class="charts-grid">
-          ${donutParameters('Kaygı G', d.sc.b1r, 100, '#E8547A')}
-          ${donutParameters('Kaygı D', d.sc.b1d, 100, '#C03060')}
-          ${donutParameters('Bağlılık G', d.sc.b2r, 100, '#8B68D4')}
-          ${donutParameters('Bağlılık D', d.sc.b2d, 100, '#6845B8')}
-          ${donutParameters('Benlik G', d.sc.b3r, 100, '#3DAB8C')}
-          ${donutParameters('Benlik D', d.sc.b3d, 100, '#2A8068')}
+  const charts = [
+    { lbl:'Sosyal Kaygı',    icon:'🔒', real:sc.b1r, dig:sc.b1d },
+    { lbl:'Sosyal Bağlılık', icon:'🔗', real:sc.b2r, dig:sc.b2d },
+    { lbl:'Benlik Sunumu',   icon:'🪞', real:sc.b3r, dig:sc.b3d },
+  ];
+
+  const chartsH = charts.map(ch => `
+    <div class="chart-item">
+      <div class="donut-wrap">
+        <svg viewBox="0 0 84 84">
+          <circle cx="42" cy="42" r="36" fill="none" stroke="#E8E0F4" stroke-width="8"/>
+          <circle cx="42" cy="42" r="22" fill="none" stroke="#E8E0F4" stroke-width="8"/>
+          <circle cx="42" cy="42" r="36" fill="none" stroke="#3DAB8C" stroke-width="8"
+            stroke-linecap="round" stroke-dasharray="0 ${C.toFixed(2)}"
+            class="arc-a" data-t="${dA(ch.real, C)}"
+            style="transition:stroke-dasharray 1.3s cubic-bezier(0.23,1,0.32,1)"/>
+          <circle cx="42" cy="42" r="22" fill="none" stroke="#8B68D4" stroke-width="8"
+            stroke-linecap="round" stroke-dasharray="0 ${Ci.toFixed(2)}"
+            class="arc-a" data-t="${dA(ch.dig, Ci)}"
+            style="transition:stroke-dasharray 1.3s cubic-bezier(0.23,1,0.32,1) .2s"/>
+        </svg>
+        <div class="donut-center">
+          <div class="dc-icon">${ch.icon}</div>
+          <div class="dc-real">🌿 ${ch.real}%</div>
+          <div class="dc-dig">📡 ${ch.dig}%</div>
         </div>
       </div>
+      <div class="chart-lbl">${ch.lbl}</div>
+    </div>`).join('');
+
+  const platforms = Array.isArray(PQA.pqd4) ? PQA.pqd4.join(', ') : '—';
+
+  document.getElementById('rh-xp').textContent = '⭐ ' + totalXP + ' XP kazandın!';
+  document.getElementById('results-body').innerHTML = `
+    <div class="charts-card">
+      <div class="charts-ttl">📊 Gerçek vs Dijital Karşılaştırma</div>
+      <div class="charts-sub">Dış halka = 🌿 Gerçek Hayat &nbsp;·&nbsp; İç halka = 📡 Dijital Hayat</div>
+      <div class="charts-grid">${chartsH}</div>
+      <div class="charts-legend">
+        <div class="leg-item"><div class="leg-dot" style="background:#3DAB8C"></div>🌿 Gerçek Hayat (dış)</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#8B68D4"></div>📡 Dijital Hayat (iç)</div>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="ic-title">💡 Kişisel Değerlendirme</div>
+      <div class="ic-text">${insightText}</div>
+    </div>
+
+    <div class="demo-card">
+      <div class="demo-title">👤 Profil Bilgilerin</div>
+      <div class="demo-grid">
+        <div class="demo-item">🎂 Yaş: <strong>${PQA.pqz1 || '—'}</strong></div>
+        <div class="demo-item">⚧ Cinsiyet: <strong>${PQA.pqz2 || '—'}</strong></div>
+        <div class="demo-item" style="grid-column:1/-1">📱 Platformlar: <strong>${platforms}</strong></div>
+      </div>
+    </div>
+
+    <div class="results-cta">
+      <button class="btn-r btn-restart" onclick="restartAll()">🔄 Yeniden Başla</button>
+      <button class="btn-r btn-dl"      onclick="window.print()">🖨️ Yazdır</button>
+    </div>
+
+    <div style="text-align:center;font-size:.7rem;color:var(--ink-lt);margin-top:8px;line-height:1.6">
+      Katılımın için teşekkürler, ${userName}! 🌸<br>
+      Bu veriler araştırma amacıyla kullanılmaktadır.
     </div>
   `;
 
   showScreen('s-results');
-  const resultTitle = document.querySelector('.rh-title');
-  if (resultTitle) resultTitle.textContent = "Test Tamamlandı, " + userName + "!";
+  setTimeout(() => {
+    document.querySelectorAll('.arc-a').forEach(a => a.setAttribute('stroke-dasharray', a.dataset.t));
+  }, 200);
+  spawnConfetti('#FFBCCB');
+  setTimeout(() => spawnConfetti('#C9B5F0'), 350);
+  setTimeout(() => spawnConfetti('#90D0B0'), 700);
 }
 
+/* ══════════════════════════════════════════════
+   RESTART
+══════════════════════════════════════════════ */
 function restartAll() {
-  if (confirm('Tüm ilerlemen sıfırlanacak. Başa dönmek istediğine emin misin?')) {
-    location.reload();
-  }
+  if (!confirm('Tüm yanıtlar sıfırlanacak?')) return;
+  Object.keys(A).forEach(k => delete A[k]);
+  Object.keys(PQA).forEach(k => delete PQA[k]);
+  totalXP = 0; curQ = 0; curPQ = 0; window._SD = null;
+  flatQs = [];
+  document.getElementById('ni').value = '';
+  showScreen('s-splash');
 }
 
+/* ══════════════════════════════════════════════
+   YARDIMCI FONKSİYONLAR
+══════════════════════════════════════════════ */
 function spawnConfetti(color) {
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < 22; i++) {
     const el = document.createElement('div');
     el.className = 'confetti-el';
-    el.style.position = 'fixed';
-    el.style.left = Math.random() * 100 + 'vw';
-    el.style.top = '-10px';
-    el.style.backgroundColor = color || '#8B68D4';
-    el.style.width = (Math.random() * 8 + 5) + 'px';
-    el.style.height = (Math.random() * 8 + 5) + 'px';
-    el.style.opacity = Math.random() + 0.5;
-    el.style.transform = `rotate(${Math.random() * 360}deg)`;
-    el.style.zIndex = '9999';
-    el.style.transition = `top ${Math.random() * 2 + 1.5}s ease-in, transform ${Math.random() * 2 + 1.5}s linear`;
+    el.style.cssText = `left:${Math.random()*100}vw;top:-10px;background:${color};`
+      + `width:${Math.random()*10+5}px;height:${Math.random()*10+5}px;`
+      + `border-radius:${Math.random()>.5?'50%':'3px'};`
+      + `animation-duration:${Math.random()*2+1.5}s;animation-delay:${Math.random()*.6}s;`;
     document.body.appendChild(el);
-    
-    setTimeout(() => {
-      el.style.top = '100vh';
-      el.style.transform = `rotate(${Math.random() * 720}deg)`;
-    }, 50);
-
     setTimeout(() => el.remove(), 3500);
   }
 }
 
 function spawnXP(el) {
-  const rect = el.getBoundingClientRect();
-  const floating = document.createElement('div');
-  floating.className = 'xp-float';
-  floating.textContent = '+10 XP';
-  floating.style.position = 'fixed';
-  floating.style.left = (rect.left + rect.width / 2 - 20) + 'px';
-  floating.style.top = rect.top + 'px';
-  floating.style.color = '#FFA500';
-  floating.style.fontWeight = 'bold';
-  floating.style.zIndex = '1000';
-  floating.style.transition = 'all 1s ease-out';
-  floating.style.pointerEvents = 'none';
-  document.body.appendChild(floating);
-  
-  setTimeout(() => {
-    floating.style.top = (rect.top - 50) + 'px';
-    floating.style.opacity = '0';
-  }, 50);
-
-  setTimeout(() => floating.remove(), 1050);
+  const r = el.getBoundingClientRect();
+  const f = document.createElement('div');
+  f.className = 'xp-float';
+  f.textContent = '+10 XP';
+  f.style.cssText = `left:${r.left + r.width/2 - 24}px;top:${r.top - 8}px;`;
+  document.body.appendChild(f);
+  setTimeout(() => f.remove(), 1100);
 }
 
 function showToast(msg) {
-  let toast = document.getElementById('toast');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'toast';
-    toast.style.position = 'fixed';
-    toast.style.bottom = '20px';
-    toast.style.left = '50%';
-    toast.style.transform = 'translateX(-50%)';
-    toast.style.background = '#333';
-    toast.style.color = '#fff';
-    toast.style.padding = '10px 20px';
-    toast.style.borderRadius = '20px';
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.3s';
-    toast.style.zIndex = '9999';
-    document.body.appendChild(toast);
-  }
-  toast.textContent = msg;
-  toast.style.opacity = '1';
-  setTimeout(() => toast.style.opacity = '0', 3000);
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._t);
+  t._t = setTimeout(() => t.classList.remove('show'), 2500);
 }
