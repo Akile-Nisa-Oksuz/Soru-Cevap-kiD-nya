@@ -586,6 +586,17 @@ function advPQ() {
     return;
   }
   
+  // Eğer single veya multi ise ve seçim yapılmamışsa uyarı göster
+  if (curQuestion.type === 'single' && !PQA[curQuestion.id]) {
+    showToast('⚠️ Lütfen işaretleyiniz veya bu bölümü geç');
+    return;
+  }
+  
+  if (curQuestion.type === 'multi' && (!PQA[curQuestion.id] || PQA[curQuestion.id].length === 0)) {
+    showToast('⚠️ Lütfen işaretleyiniz veya bu bölümü geç');
+    return;
+  }
+  
   if (inp && inp.value) PQA[ALL_PQ[curPQ].id] = inp.value;
   curPQ++;
   renderPQ();
@@ -723,6 +734,11 @@ function buildPersonaCard() {
   showScreen('s-persona');
   spawnConfetti('#C9B5F0');
   setTimeout(() => spawnConfetti('#FFBCCB'), 300);
+  
+  // 5 saniye sonra analiz ekranına gitmek isteyip istemediğini sor
+  setTimeout(() => {
+    document.getElementById('persona-results-overlay').style.display = 'flex';
+  }, 5000);
 }
 
 /* ══════════════════════════════════════════════
@@ -916,6 +932,9 @@ function switchPTab(type) {
    SONUÇLAR
 ══════════════════════════════════════════════ */
 function buildResults() {
+  // Modalı kapat
+  document.getElementById('persona-results-overlay').style.display = 'none';
+  
   const d = window._SD;
   if (!d) return;
 
@@ -1003,6 +1022,9 @@ function buildResults() {
   spawnConfetti('#FFBCCB');
   setTimeout(() => spawnConfetti('#C9B5F0'), 350);
   setTimeout(() => spawnConfetti('#90D0B0'), 700);
+  setTimeout(() => {
+    document.getElementById('feedback-overlay').style.display = 'flex';
+  }, 1200);
 }
 
 /* ══════════════════════════════════════════════

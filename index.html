@@ -152,6 +152,23 @@
 </div>
 
 <!-- ══════════════════════════════
+     PERSONA TO RESULTS
+══════════════════════════════ -->
+<div id="persona-results-overlay" class="sc-overlay" style="display:none">
+  <div class="sc-popup" style="max-width:360px;text-align:center">
+    <div style="font-size:3.2rem;margin-bottom:12px">📊</div>
+    <div style="font-family:'Caveat',cursive;font-size:1.3rem;font-weight:800;margin-bottom:10px">Analiz Ekranına Gitmek Ister misin?</div>
+    <div style="font-size:.85rem;color:var(--ink-mid);margin-bottom:18px;line-height:1.6">
+      Kartın detayı inceledikten sonra skor analizine geçmek ister misin?
+    </div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <button class="btn-main" onclick="buildResults();document.getElementById('persona-results-overlay').style.display='none'" style="flex:1;min-width:140px">Evet, Analizı Gör →</button>
+      <button class="btn-main" onclick="document.getElementById('persona-results-overlay').style.display='none'" style="flex:1;min-width:140px;background:var(--lav-lt);color:inherit">Hayır, Devam Et</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
      S6 — RESULTS
 ══════════════════════════════ -->
 <div id="s-results" class="screen">
@@ -169,6 +186,24 @@
     <div class="rh-xp" id="rh-xp">⭐ 0 XP</div>
   </div>
   <div class="results-body" id="results-body"></div>
+  <button id="show-feedback-btn" class="btn-feedback" style="display:none;margin:16px auto;" onclick="document.getElementById('feedback-overlay').style.display='flex'">📝 Forma Gir →</button>
+</div>
+
+<!-- ══════════════════════════════
+     GOOGLE FORM FEEDBACK
+══════════════════════════════ -->
+<div id="feedback-overlay" class="sc-overlay" style="display:none">
+  <div class="sc-popup" style="max-width:360px;text-align:center">
+    <div style="font-size:3.5rem;margin-bottom:12px">📝</div>
+    <div style="font-family:'Caveat',cursive;font-size:1.35rem;font-weight:800;margin-bottom:10px">Geri Bildirim Formu</div>
+    <div style="font-size:.85rem;color:var(--ink-mid);margin-bottom:18px;line-height:1.6">
+      Araştırmanı iyileştirmek için kısa deneyiminizi paylaşabilir misiniz?
+    </div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="https://forms.gle/jiA1shUKaVKERUhP7" target="_blank" class="btn-main" style="text-decoration:none;display:inline-block">Formu Doldur →</a>
+    <button class="scp-btn" onclick="document.getElementById('feedback-overlay').style.display='none';document.getElementById('show-feedback-btn').style.display='block'" style="background:var(--lav-lt);color:inherit">Sonra</button>
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>
