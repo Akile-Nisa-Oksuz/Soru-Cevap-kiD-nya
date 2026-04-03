@@ -35,14 +35,15 @@
       </div>
       <button class="btn-main btn-start"    onclick="startSurvey()">🎮 Ankete Başla</button>
       <button class="btn-main btn-account"  onclick="showToast('Hesap özelliği yakında!')">👤 Hesabım</button>
+      <button class="btn-main btn-theme" onclick="toggleThemeMenu()">🎨 Tema</button>
+      <div class="theme-menu" id="theme-menu" style="display:none">
+        <button class="theme-opt active" onclick="setTheme('light');toggleThemeMenu()" title="Açık Tema">☀️ Açık</button>
+        <button class="theme-opt" onclick="setTheme('mint');toggleThemeMenu()" title="Mint Tema">🌲 Mint</button>
+        <button class="theme-opt" onclick="setTheme('dark');toggleThemeMenu()" title="Karanalık Tema">🌚 Koyu</button>
+      </div>
       <button class="btn-main btn-settings" onclick="showToast('Ayarlar yakında!')">⚙️ Ayarlar</button>
     </div>
-    <div class="theme-selector">
-      <div class="theme-label">🎨 Tema:</div>
-      <button class="theme-btn active" onclick="setTheme('light')" title="Açık Tema">☀️</button>
-      <button class="theme-btn" onclick="setTheme('mint')" title="Mint Tema">🌿</button>
-      <button class="theme-btn" onclick="setTheme('dark')" title="Karanlık Tema">🌙</button>
-    </div>
+
     <div class="section-pills">
       <span class="s-pill sp-rose">🔒 Sosyal Kaygı</span>
       <span class="s-pill sp-lav">🔗 Sosyal Bağlılık</span>

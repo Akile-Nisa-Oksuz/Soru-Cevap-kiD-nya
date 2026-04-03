@@ -17,15 +17,24 @@ function setTheme(theme) {
   localStorage.setItem('appTheme', theme);
   
   // Buton görselleri güncelle
-  document.querySelectorAll('.theme-btn').forEach(btn => {
+  document.querySelectorAll('.theme-btn,.theme-opt').forEach(btn => {
     btn.classList.remove('active');
   });
   
+  // Tema butonlarının active'i güncelle
   const btnMap = { light: 0, mint: 1, dark: 2 };
   const idx = btnMap[theme];
   if (document.querySelectorAll('.theme-btn')[idx]) {
     document.querySelectorAll('.theme-btn')[idx].classList.add('active');
   }
+  if (document.querySelectorAll('.theme-opt')[idx]) {
+    document.querySelectorAll('.theme-opt')[idx].classList.add('active');
+  }
+}
+
+function toggleThemeMenu() {
+  const menu = document.getElementById('theme-menu');
+  menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
 }
 
 // Sayfa yüklendiğinde temayı uygula
@@ -382,6 +391,7 @@ function renderQ() {
         ${qd.rev ? '<span style="font-size:.62rem;background:#FFE0E8;color:#C03060;border:1px solid #FFBCCB;border-radius:4px;padding:1px 5px;margin-left:4px">Ters</span>' : ''}
       </div>
       <div class="q-text-main">"${qd.text}"</div>
+      ${qd.rev ? '<div class="q-rev-warn-mobile">⚠️ Şıklar terstir</div>' : ''}
       <div class="likert-row${qd.rev ? ' likert-reverse' : ''}">
         ${[
           {v:1,t:'Kesinlikle<br>Katılmıyorum',s:'--'},
