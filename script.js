@@ -212,7 +212,7 @@ const PQ_DEMO = [
 
   { id:'pqz2', type:'single',
     label:'Cinsiyetin',
-    opts:['Kadın','Erkek','Non-binary','Belirtmek istemiyorum'] },
+    opts:['Kadın','Erkek','Belirtmek istemiyorum'] },
 ];
 
 /* Tüm persona soruları sırası:
