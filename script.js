@@ -1032,9 +1032,6 @@ function buildResults() {
   spawnConfetti('#FFBCCB');
   setTimeout(() => spawnConfetti('#C9B5F0'), 350);
   setTimeout(() => spawnConfetti('#90D0B0'), 700);
-  setTimeout(() => {
-    document.getElementById('feedback-overlay').style.display = 'flex';
-  }, 1200);
 }
 
 /* ══════════════════════════════════════════════
